@@ -2,7 +2,7 @@ resource "aws_lambda_function" "patent_lambda" {
   filename      = "patent_informer.zip"
   function_name = "patent-notifier-dynamodb"
   role          = "arn:aws:iam::467749311079:role/LabRole"
-  handler       = "patent-notifier.handler"
+  handler       = "patent-dynamodb.handler"
   timeout       = 300
   runtime       = "python3.9"
   source_code_hash = filebase64sha256("x.zip")
