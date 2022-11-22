@@ -30,7 +30,7 @@ resource "aws_cloudwatch_event_rule" "every_twentyfour_hours" {
     schedule_expression = "rate(24 hours)"
 }
 
-resource "aws_cloudwatch_event_target" "job_crawler_every_twentyfour_hours" {
+resource "aws_cloudwatch_event_target" "patent_notifier_every_twentyfour_hours" {
     rule = aws_cloudwatch_event_rule.every_twentyfour_hours.name
     target_id = "patent_notify"
     arn = aws_lambda_function.patent_notifier.arn
