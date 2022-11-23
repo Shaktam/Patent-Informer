@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "patent_notifier" {
   function_name = "patent_notifier_s3"
-  filename       = "build/job_crawler.zip"
+  filename       = "x.zip"
   role          = "arn:aws:iam::467749311079:role/LabRole"
   handler       = "patent-s3.handler"
   timeout       = 300
