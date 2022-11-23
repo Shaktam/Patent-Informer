@@ -8,22 +8,14 @@ resource "aws_launch_template" "webserver" {
     }
   }
 
-
   iam_instance_profile {
     name = "LabInstanceProfile"
   }
 
   image_id = "ami-094125af156557ca2"
-
-  
   instance_type = "t3.micro"
-  
   key_name = "vockey"
-
-
   vpc_security_group_ids = [aws_security_group.security_group.id]
-
-
  # user_data = filebase64("script/userdata.sh")
 }
 
@@ -42,4 +34,3 @@ resource "aws_autoscaling_group" "webserver" {
   ]
   target_group_arns = [aws_lb_target_group.webserver_lb_tg.arn]
 }
-
