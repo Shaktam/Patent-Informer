@@ -90,7 +90,6 @@ resource "aws_nat_gateway" "nat_gw" {
   depends_on = [aws_internet_gateway.gw]
 }
 
-
 resource "aws_default_route_table" "private_route_table" {
   default_route_table_id = aws_vpc.patent_vpc.default_route_table_id
 
