@@ -1,4 +1,3 @@
-
 resource "aws_security_group" "lb_sg" {
   name        = "allow_http"
   description = "Allow HTTP inbound traffic"
