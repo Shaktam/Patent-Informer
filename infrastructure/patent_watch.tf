@@ -1,7 +1,7 @@
-resource "aws_lambda_function" "patent_notifier" {
+resource "aws_lambda_function" "patent_notifier_s3" {
   function_name = "patent_notifier_s3"
-  filename       = "x.zip"
-  role          = "arn:aws:iam::467749311079:role/LabRole"
+  filename      = "x.zip"
+  role          = locals.iam_role 
   handler       = "patent-s3.handler"
   timeout       = 300
   runtime       = "python3.9"
