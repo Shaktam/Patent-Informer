@@ -14,7 +14,7 @@ resource "aws_lambda_function" "patent_lambda" {
   }
 }
 
-resource "aws_lambda_event_source_mapping" "Patent_table_update" {
+resource "aws_lambda_event_source_mapping" "patent_table_update" {
   event_source_arn  = aws_dynamodb_table.Patent-dynamodb-table.stream_arn
   function_name     = aws_lambda_function.patent_lambda.arn
   starting_position = "LATEST"
